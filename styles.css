@@ -49,9 +49,45 @@ nav {
     padding: 1rem;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 .logo h1 {
-    color: var(--white);
+    margin: 0;
     font-size: 1.5rem;
+    animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .nav-links {
@@ -403,10 +439,15 @@ footer {
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        padding: 2rem 0;
     }
 
     .nav-links.active {
         right: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
     }
 
     .burger {
@@ -419,6 +460,18 @@ footer {
         background-color: var(--white);
         margin: 5px;
         transition: all 0.3s ease;
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .about-content,
