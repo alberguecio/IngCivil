@@ -182,3 +182,16 @@ const statsObserver = new IntersectionObserver((entries) => {
 if (statsSection) {
     statsObserver.observe(statsSection);
 }
+
+// Manejo de mensajes del formulario
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+    const formMessage = document.getElementById('form-message');
+
+    if (status === 'success') {
+        formMessage.innerHTML = '<div class="success-message">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</div>';
+    } else if (status === 'error') {
+        formMessage.innerHTML = '<div class="error-message">Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.</div>';
+    }
+});
